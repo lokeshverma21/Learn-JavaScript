@@ -9,7 +9,6 @@ Welcome to the JavaScript Learning Notes repository! This repository contains my
 3. [Core Concepts](#core-concepts)
 4. [Advanced Topics](#advanced-topics)
 5. [Resources](#resources)
-6. [Contributing](#contributing)
 
 ## Introduction
 
@@ -45,11 +44,6 @@ As your knowledge grows, explore more advanced JavaScript topics:
 
 ## Resources
 
-The [00-images](https://github.com/lokeshverma21/Learn-JavaScript/tree/main/00_images) folder contains lImages used in project..
-
-## Contributing
-
-Contributions are welcome! If you have additional insights, examples, or corrections, feel free to open an issue or submit a pull request. Please follow the [contribution guidelines](CONTRIBUTING.md).
-
+The [00-images](https://github.com/lokeshverma21/Learn-JavaScript/tree/main/00_images) - folder contains Images used in projects.
 
 Happy coding! 🚀

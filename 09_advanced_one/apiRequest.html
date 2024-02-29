@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+</head>
+<body>
+    <h1>API rewuest by XMLHTTPRequest</h1><br><br>
+    0	UNSENT	Client has been created. open() not called yet. <br>
+    1	OPENED	open() has been called. <br>
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available. <br>
+    3	LOADING	Downloading; responseText holds partial data. <br>
+    4	DONE	The operation is complete. <br>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/lokeshverma21'
+    const xhr = new XMLHttpRequest()
+    
+    //this sends the request for API, open does not actually send the reuest itself we use send() to send the request
+    xhr.open('GET',requestURL)
+    xhr.send();//This actually sends the request and call the API
+
+    //the function will get executed everytime when the state changed
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState) 
+
+        //do a task on any state
+        if (xhr.readyState === 4) {
+            //we get data in string format, 
+            //But to use the requested data more efficiently coverts it to in JSON format (object format)
+            const data = JSON.parse(this.responseText)
+            console.log(this.responseText)
+            console.log(data.avatar_url)
+            let image = `url(${data.avatar_url})`;
+
+            // Create a div element and set its background image
+            let images = document.createElement('div');
+            images.style.backgroundImage = image;
+            
+            images.style.width = '100px'; 
+            images.style.height = '100px'; 
+            images.style.backgroundSize = 'cover';
+
+            // Append the div element to the body of the document
+            document.body.appendChild(images);
+            }
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h2>Hello</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //SetTimeout function performs a task once after a given time.
+    setTimeout(function(){
+        console.log("Hello")
+    }, 2000)//The function will get executed after 2 seconds
+    //also
+    const sayHello = function(){
+        console.log("Hello")
+    }
+    setTimeout(sayHello,3000)
+
+
+    //Change innerHTML using setTimeout
+    const changetext = function(){
+        document.querySelector('h2').innerHTML = "Set Timeout function is called"
+    }
+
+    const change = setTimeout(changetext,2000)
+
+    //Similarly ther is a function called clearTimeout() , this function clears or prevents the setTimeout function 
+    //to get executed
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(change)
+        console.log("Stoped")
+    })
+    
+</script>
+</html>

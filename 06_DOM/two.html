@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">TuesDay</div>
+        <div class="day">WednesDay</div>
+        <div class="day">ThursDay</div>
+    </div>
+</body>
+<script>
+    //selecting child from parent
+    const parent = document.querySelector('.parent')
+
+    console.log(parent)
+    console.log(parent.children) //Output -> HTMLCollection(4) [div.day, div.day, div.day, div.day]
+    console.log(parent.children[1])//Output -> <div class="day">TuesDay</div>
+    console.log(parent.children[1].innerHTML)//Tuesday
+
+    console.log(parent.firstElementChild)// <div class="day">MonDay</div>
+    console.log(parent.lastElementChild)// <div class="day">ThursDay</div>
+
+
+    //selecting parent from child
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne)
+    console.log(dayOne.parentElement)// <div class="parent">...</div>
+    console.log(dayOne.nextElementSibling)// <div class="day">TuesDay</div>
+
+    console.log("Nodes : ",parent.childNodes)
+    /*
+    NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+    0: text
+    1:div.day
+    2:text
+    3:div.day
+    4:text
+    5:div.day
+    6:text
+    7:div.day
+    8:text
+    length:9
+    [[Prototype]]:NodeList
+
+    There are nine 'Nodes' here but we had only added 4 divs in our html file, 
+    It is because every new line is also considered as a node in web, nodelist
+    NodeList is a complex tree structure in itself
+    */
+</script>
+</html>

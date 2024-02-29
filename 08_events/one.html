@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+            <li><img id="person" src="/JavaScript/00_images/person.jpg" alt="PhotoShoot" style="width: 300px; height: 200px;"></li>
+            <li><img id="car" src="/JavaScript//00_images/car.jpg" alt="" style="width: 300px; height: 200px;"></li>
+            <li><img id="guitar" src="/JavaScript/00_images/guitar.jpg" alt="" style="width: 300px; height: 200px;"></li>
+            <li><img id="beach" src="/JavaScript/00_images/beach.jpg" alt="" style="width: 300px; height: 200px;"></li>
+            <li><a id="link" href="www.google.com" style="color: aliceblue;">Go</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('person').onclick = function(){
+    //     alert("Image clicked")
+    // }
+
+    //A better approach for this
+    document.getElementById('person').addEventListener('click',function(){
+        alert('Image clicked')
+    }, false);
+
+    //  We are using false parameter here, because here happening "EVENT PRAPOGATION"
+
+
+    /*
+        EVENT PRAPOGATION
+
+        -> false - Bubbling up (Bottom to top approach)
+        -At first the inner event/function will execute and then the outer event/function will get executed.
+        -By default the value is false.
+
+        -> true - Capturing mode (Top to bottom approach)
+        -At first the outer event/function will get execute and then the inner event/function will get executed.
+    */
+
+    //Exapmle of event propagation
+    document.getElementById('images').addEventListener('click',function(){
+        console.log('Clicked inside the ul')
+    }, true)
+
+    document.getElementById('car').addEventListener('click',function(){
+        console.log('Car Clicked')
+    }, true)
+
+    /*
+        If we use 'false' in both the event listners, the output will be:
+        -Car Clicked
+        -Clicked inside the ul
+
+        ->At first we get the value of inner element and the of the outer one.
+
+
+        If we use 'true' in the both the event listners, the output wil be:
+        -Clicked inside the ul
+        -Car Clicked
+
+        ->At first we get the value of the outer event and then of the inner one.
+    */
+
+
+    //There are lots of events that we can access with 'event' that we used in our function
+    document.getElementById('link').addEventListener('click',function(event){
+        event.preventDefault();
+        //With perventDefault we can prevent the default functionalites/behaviour of any element.
+    });
+
+
+    //Remove the image from the list item which is clicked
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode)
+
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+
+            let removeThis = e.target.parentNode
+            removeThis.remove()
+        }
+        
+        //removeThis.parentNode.removeChild(removeThis)
+    })
+</script>
+</html>

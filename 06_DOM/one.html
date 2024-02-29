@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <div>
+        <h1 id="title" class="heading">Lorem ipsum dolor sit amet consectetur ,<span style="display: none;">Test Text</span></h1>
+
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+        </ul>
+    </div>
+</body>
+<script>
+   /* document.getElementById('title')
+
+    document.getElementById('title').className
+
+    document.getElementById('title').getAttribute('class')
+
+    document.getElementById('title').setAttribute('class','test')
+
+
+    document.getElementsByClassName('heading')
+    //HTMLCollection [h1#title.heading, title: h1#title.heading]
+    //It gives html collection in output
+    //HTML collection and Array are two different things
+
+    title.style.backgroundColor = 'purple'
+
+    title.style.borderRadius = "15px"
+
+
+    title.innerText
+    //'Lorem ipsum dolor sit amet consectetur ,'
+    //This will give the text which is visible
+
+
+    title.textContent
+    //'Lorem ipsum dolor sit amet consectetur ,Test Text'
+    //This will give the text which is viasible as well as which is hidden (by any deisplay property)
+
+    title.innerHTML
+    //'Lorem ipsum dolor sit amet consectetur ,<span style="display: none;">Test Text</span>'
+    //This gives the all html syntax inside the element
+
+
+    document.querySelector('h3')
+    //<h3>​Lorem ipsum dolor sit amet.​</h3>​
+    //with quesryselector we can directly select and id , class or element. If similar elements are present in 
+    //the document then, only the first element will be given 
+
+    document.querySelector('title')
+    document.querySelector('p:first-child')
+
+
+    document.querySelectorAll('li')
+    //NodeList(4) [li, li, li, li]
+    //When we use querySelectorAll, we get a 'NodeList' it looks like a array but its not
+    //We can use foreach on nodelist but not other methods of array like  class="list-item"map, filter and reduce 
+
+
+
+    document.getElementsByClassName('list-item')
+    //HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+    //We get HTMLCollection and it is different from array
+    //HTMLCollection does not have many functionalities like array so we convert it to Array
+
+    //TO convert HTMLCollection to array
+    const tempClassList = document.getElementByClassName('list-item')
+    Array.from(tempClassList)
+    //(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+*/
+</script>
+</html>

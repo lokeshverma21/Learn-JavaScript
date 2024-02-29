@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //Adding new element in ul through a function
+    function addNewLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addNewLanguage('Java')
+    addNewLanguage('Python')
+
+    //A more optimised way for doing the same task as above
+    //Because in the above approach we have to travesrse the whole tree everytime when a new element added,
+    function addLangOptmised(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLangOptmised('Swift')
+
+
+    //EDIT           a already existing element through DOM
+    const secondLang = document.querySelector('li:nth-child(2)')
+    //secondLang.innerHTML = "Mojo"
+
+    //better approach
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //also
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = "<li>Typescrpit</li>"
+
+    //REMOVE  a already existing through DOM
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>

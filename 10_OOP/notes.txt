@@ -1,0 +1,19 @@
+-> object oriented programming
+
+-->OBJECT
+> It is collection of properties and methods
+
+->Parts of OOPS
+>Objrctt literals
+
+-Constructor function 
+- Prototypes
+- Classes
+- Instances(this,new)
+
+
+--> 4 pillars of OOPS
+> Abstraction
+> Inscapsulation
+> Polymorphism
+> Inheritance

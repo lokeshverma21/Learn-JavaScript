@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    
+</body>
+<script>
+    //Creating a new element in HTML from DOM
+    const div = document.createElement('div')
+    console.log(div)
+
+    //giving class name to the created element
+    div.className = "main"
+
+    //giving id to the created element
+    div.id = Math.round(Math.random() * 10 + 1)//This is random id given to the element
+
+    //styling the created element
+    div.style.backgroundColor = "purple"
+    div.style.color = "White"
+
+    //Adding text to the created element
+   // div.innerText = "New element Created"
+    //We can use better appraoach to add text in the element
+    const addText = document.createTextNode("New element created")
+    div.appendChild(addText)
+
+    //attaching the element to the body so that it will be visible
+    document.body.appendChild(div)
+</script>
+</html>

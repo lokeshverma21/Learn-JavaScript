@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    height: 90vh;
+    /* : antiquewhite; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+body{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.buttons{
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(101, 101, 101);
+}
+
+#white{
+    background-color: white;
+}
+
+#black{
+    background-color: black;
+}
+
+#purple{
+    background-color: purple;
+}
+
+#yellow{
+    background-color: yellow;
+}
